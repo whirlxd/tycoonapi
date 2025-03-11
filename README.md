@@ -20,9 +20,7 @@ Inspired by roblox tycoon games this is an api made so you can learn how to use 
 
 2. Install dependencies:
 
-    ```bash
- bun install
-    ```
+    ``` bun install```
 
 3. Start the server:
     ```bash
