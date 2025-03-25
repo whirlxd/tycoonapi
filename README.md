@@ -28,8 +28,12 @@ Inspired by roblox tycoon games this is an api made so you can learn how to use 
     ```
 
 ## Usage 
- You can call the endpoints using curl or postman. The documentation for the endpoints can be found in the [API Endpoints](docs.md) section.
- For example the example curl commands can be found in [examples.md](examples.md)
+ You can call the endpoints using curl or postman.
+ the hosted version of the api can be found at https://tycoonapi.onrender.com/
+
+The documentation for the endpoints can be found in the [API Endpoints](docs.md) section.
+
+For example the example curl commands can be found in [examples.md](examples.md)
 
 
 To run the tests, use the following command:
