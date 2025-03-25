@@ -43,7 +43,29 @@ Bun.serve({
 		const url = new URL(req.url);
 		const pathname = url.pathname;
 		const method = req.method;
+		if (method === "GET" && pathname === "/") {
+			const docs = `
+# Documentation
 
+## Overview
+Welcome to the Tycoon API! Bear with me here as this requires a bit of a setup. This API is a text-based game where you can create a hero or villain and build your base, recruit minions or sidekicks, and battle other players. You can also complete missions, invest in the stock market, and participate in events.
+
+## How to Generate a Token
+1. Use the \`/signup\` endpoint to create a new user.
+2. Pass the username, password, alignment (hero or villain), and region (e.g., Gotham, Metropolis) in the request body.
+3. You will receive a token in the response if the user is created successfully.
+4. Use the \`/login\` endpoint with your username and password to receive a token.
+
+
+
+For the full  documentation, visit the [GitHub repository](https://github.com/whirlxd/tycoonapi).
+
+    `;
+			return new Response(docs, {
+				status: 200,
+				headers: { "Content-Type": "text/markdown" },
+			});
+		}
 		if (method === "POST" && pathname === "/signup") {
 			const data = await parseJSON({ req });
 			if (
@@ -56,7 +78,7 @@ Bun.serve({
 				console.log(data);
 				return new Response(
 					JSON.stringify({
-						error: `Missing required fields: ${data}`,
+						error: `Missing required fields: ${data}. Please make sure to include these to get started! `,
 					}),
 					{ status: 400, headers: { "Content-Type": "application/json" } },
 				);
